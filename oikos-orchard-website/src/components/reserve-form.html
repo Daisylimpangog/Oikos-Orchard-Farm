@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve Slots - OIKOS ORCHARD AND FARM</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/animations.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="announcement-bar">
+        <div class="announcement-content">
+            <span class="announcement-text">Ready for a unique getaway? 🌿✨ Reserve your glamping experience at Oikos Orchard & Farm today! Enjoy cozy tents, fresh air, and beautiful scenery — perfect for relaxation and adventure. 🌅 Send us a message to book your slot!</span>
+            <span class="announcement-text" aria-hidden="true">Message us directly. Slots are limited  book early and experience nature the Oikos Orchard & Farm way! 🌾</span>
+        </div>
+    </div>
+<form class="nature-form" id="glamping-registration">
+    <div class="form-header">
+        <div class="logo-wrapper">
+            <img src="/oikos-orchard-website/image.png" alt="" class="form-logo">
+        </div>
+        <h2>Glamping Experience Registration</h2>
+        <p class="form-subtitle">Immerse yourself in nature's tranquility</p>
+    </div>
+
+    <div class="form-container">
+        <!-- Booking Details -->
+        <div class="form-section">
+            <div class="form-group">
+                <label for="venue">Venue Location</label>
+                <select id="venue" name="venue" required class="elegant-input">
+                    <option value="">Select venue location</option>
+                    <option value="main-orchard">Main Orchard - Camping Ground</option>
+                    <option value="hilltop">Hilltop Glamping Area</option>
+                    <option value="riverside">Riverside Camping Site</option>
+                </select>
+            </div>
+            
+            <div class="form-group split">
+                <div>
+                    <label for="stay-date">Date of Stay</label>
+                    <input type="date" id="stay-date" name="stay-date" required class="elegant-input">
+                </div>
+                <div>
+                    <label for="booking-ref">Booking Reference No.</label>
+                    <input type="text" id="booking-ref" name="booking-ref" 
+                           class="elegant-input"
+                           placeholder="Will be assigned upon confirmation">
+                </div>
+            </div>
+        </div>
+
+        <!-- Guest Information -->
+        <div class="form-section">
+            <h3>1. Guest Information</h3>
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" required class="elegant-input">
+            </div>
+
+            <div class="form-group split">
+                <div>
+                    <label for="contact">Contact Number</label>
+                    <input type="tel" id="contact" name="contact" required class="elegant-input">
+                </div>
+                <div>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required class="elegant-input">
+                </div>
+            </div>
+
+            <div class="form-group split">
+                <div>
+                    <label for="adults">Number of Adults</label>
+                    <input type="number" id="adults" name="adults" required min="1" class="elegant-input">
+                </div>
+                <div>
+                    <label for="kids">Number of Kids</label>
+                    <input type="number" id="kids" name="kids" min="0" class="elegant-input">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="organization">Name of Organization/Company/Group (if any)</label>
+                <input type="text" id="organization" name="organization" class="elegant-input">
+            </div>
+        </div>
+
+        <!-- Accommodation Details -->
+        <div class="form-section">
+            <h3>2. Accommodation Details</h3>
+            <div class="form-group">
+                <label>Chosen Package / Tent Type</label>
+                <div class="package-options">
+                    <div class="package-option">
+                        <input type="radio" id="two-pax" name="package" value="two-pax" required>
+                        <label for="two-pax">Glamping for Two (₱3,500)</label>
+                    </div>
+                    <div class="package-option">
+                        <input type="radio" id="four-pax" name="package" value="four-pax">
+                        <label for="four-pax">Glamping for Four (₱4,200)</label>
+                    </div>
+                    <div class="package-option">
+                        <input type="radio" id="family" name="package" value="family">
+                        <label for="family">Family Tent (₱10,000)</label>
+                    </div>
+                    <div class="package-option">
+                        <input type="radio" id="extra-tent" name="package" value="extra-tent">
+                        <label for="extra-tent">Bring your extra tent (₱400 per pax)</label>
+                    </div>
+                </div>
+                <small class="form-note">* Rates are subject to change during holidays, peak seasons, or special events.</small>
+            </div>
+
+            <div class="form-group">
+                <label>Preferred Activities</label>
+                <div class="activities-grid">
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="activities[]" value="farm-tour">
+                        Farm Tour (Native Tree Walk)
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="activities[]" value="fruit-picking">
+                        Fruit Picking
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="activities[]" value="tree-planting">
+                        Tree Planting
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="activities[]" value="bonfire">
+                        Bonfire Night
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="activities[]" value="hiking">
+                        Hiking / Nature Walk
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="activities[]" value="picnic">
+                        Picnic Set Up
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="activities[]" value="videoke">
+                        Videoke Night
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="activities[]" value="waterfall">
+                        Waterfall Visit
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="other-activities">Other Activities</label>
+                    <input type="text" id="other-activities" name="other-activities" class="elegant-input">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-actions">
+        <button type="submit" class="submit-btn">
+            <span>Confirm Reservation</span>
+            <svg class="btn-icon" viewBox="0 0 24 24">
+                <path d="M4 12h16m-7-7l7 7-7 7"></path>
+            </svg>
+        </button>
+    </div>
+</form>
+
+<!-- Success Modal -->
+  <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Reservation Submitted Successfully!</h3>
+            <p>Your booking reference: <strong id="modalBookingRef"></strong></p>
+            <div class="modal-actions">
+                <button id="downloadPDF" class="btn-primary">
+                    <svg class="btn-icon" viewBox="0 0 24 24" width="18" height="18">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"/>
+                    </svg>
+                    Download PDF
+                </button>
+                <a href="https://www.messenger.com/t/113467628034867" target="_blank" class="btn-secondary">
+                    <svg class="btn-icon" viewBox="0 0 24 24" width="18" height="18">
+                        <path d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10c0-5.52-4.48-10-10-10zm5 7l-3 2-3-2v3l3 2 3-2v-3z" fill="currentColor"/>
+                    </svg>
+                    Send to Facebook
+                </a>
+            </div>
+        </div>
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script>
+// After your existing form submission code
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('glamping-registration');
+    const modal = document.getElementById('successModal');
+    const closeModal = document.querySelector('.close-modal');
+    const downloadBtn = document.getElementById('downloadPDF');
+
+    // Close modal function
+    function closeModalFunc() {
+        modal.style.display = 'none';
+    }
+
+    closeModal.onclick = closeModalFunc;
+    window.onclick = (e) => {
+        if (e.target == modal) closeModalFunc();
+    }
+
+    // Generate PDF function
+    function generatePDF() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+
+        // Add nature-themed header with green color scheme
+        doc.setFillColor(44, 74, 60); // Dark green header
+        doc.rect(0, 0, 220, 40, 'F');
+        
+        // Add decorative leaf pattern
+        doc.setLineWidth(0.5);
+        doc.setDrawColor(140, 207, 123); // Light green
+        
+        // Add white text for header
+        doc.setTextColor(255, 255, 255);
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(24);
+        doc.text('OIKOS ORCHARD AND FARM', 105, 20, { align: 'center' });
+        
+        doc.setFontSize(14);
+        doc.text('Glamping Reservation Confirmation', 105, 30, { align: 'center' });
+
+        doc.setFontSize(12);
+        doc.text(`Booking Reference: ${document.getElementById('booking-ref').value}`, 25, 57);
+
+        // Start content section
+        let y = 80;
+
+        // Helper function for section headers
+        function addSectionHeader(text) {
+            doc.setFillColor(44, 74, 60);
+            doc.setTextColor(44, 74, 60);
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(14);
+            doc.text(text, 20, y);
+            doc.setLineWidth(0.5);
+            doc.line(20, y + 1, 190, y + 1);
+            y += 10;
+        }
+
+        // Helper function for content fields
+        function addField(label, value) {
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(11);
+            doc.setTextColor(44, 74, 60);
+            doc.text(label, 25, y);
+            doc.setFont('helvetica', 'normal');
+            doc.setTextColor(60, 60, 60);
+            doc.text(value || 'N/A', 80, y);
+            y += 8;
+        }
+
+        // Guest Information Section
+        addSectionHeader('Guest Information');
+        const formData = new FormData(form);
+        addField('Full Name:', formData.get('fullname'));
+        addField('Contact:', formData.get('contact'));
+        addField('Email:', formData.get('email'));
+        addField('Adults:', formData.get('adults'));
+        addField('Children:', formData.get('kids'));
+        addField('Organization:', formData.get('organization'));
+        y += 5;
+
+        // Booking Details Section
+        addSectionHeader('Booking Details');
+        addField('Venue:', formData.get('venue'));
+        addField('Date of Stay:', formData.get('stay-date'));
+        y += 5;
+
+        // Package Information
+        addSectionHeader('Package Selected');
+        const package = document.querySelector('input[name="package"]:checked');
+        if (package) {
+            addField('Package Type:', package.parentElement.textContent.trim());
+        }
+        y += 5;
+
+        // Activities Section
+        addSectionHeader('Selected Activities');
+        const activities = document.querySelectorAll('input[name="activities[]"]:checked');
+        activities.forEach(activity => {
+            doc.setTextColor(60, 60, 60);
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(11);
+            doc.text('• ' + activity.parentElement.textContent.trim(), 25, y);
+            y += 7;
+        });
+
+        // Add decorative footer
+        doc.setDrawColor(44, 74, 60);
+        doc.setFillColor(44, 74, 60);
+        doc.rect(0, 275, 220, 25, 'F');
+        doc.setTextColor(255, 255, 255);
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(10);
+        doc.text('OIKOS ORCHARD AND FARM', 105, 283, { align: 'center' });
+        doc.setFontSize(8);
+        doc.text('Your Premium Nature Getaway Experience', 105, 290, { align: 'center' });
+
+        // Add QR Code placeholder
+        doc.setDrawColor(44, 74, 60);
+        doc.setFillColor(255, 255, 255);
+        doc.roundedRect(160, 45, 20, 20, 2, 2, 'FD');
+
+        // Save the PDF
+        doc.save(`OIKOS-Reservation-${document.getElementById('booking-ref').value}.pdf`);
+    }
+
+    // Form submission handler
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        try {
+            // Your existing form submission code here
+            
+            // Show modal on success
+            modal.style.display = 'block';
+            document.getElementById('modalBookingRef').textContent = 
+                document.getElementById('booking-ref').value;
+            
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    });
+
+    // Download PDF button handler
+    downloadBtn.addEventListener('click', generatePDF);
+});
+</script>
+ <script src="../js/chat-bubble.js"></script>
+</body>
+</header>

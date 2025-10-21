@@ -1,0 +1,28 @@
+{
+  "name": "oikos-orchard-website",
+  "version": "1.0.0",
+  "description": "A website for OIKOS ORCHARD AND FARM featuring home, contact, and reservation functionalities.",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Build process not defined yet.'"
+  },
+  "keywords": [
+    "orchard",
+    "farm",
+    "reservation",
+    "contact",
+    "nature"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  },
+  "devDependencies": {},
+  "homepage": "https://yourwebsite.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/oikos-orchard-website.git"
+  }
+}
